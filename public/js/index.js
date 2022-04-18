@@ -3,6 +3,11 @@ let myChart;
 
 fetch("/api/transaction")
   .then(response => {
+    // check for a 4xx or 5xx error from server
+    if (!response.ok) {
+      throw new Error({ message: 'Something went wrong!' });
+    }
+    
     return response.json();
   })
   .then(data => {
@@ -121,7 +126,11 @@ function sendTransaction(isAdding) {
       "Content-Type": "application/json"
     }
   })
-  .then(response => {    
+  .then(response => {   
+    if (!response.ok) {
+      throw new Error({ message: 'Something went wrong!' });
+    }
+    
     return response.json();
   })
   .then(data => {
