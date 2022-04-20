@@ -17,7 +17,11 @@ fetch("/api/transaction")
     populateTotal();
     populateTable();
     populateChart();
+  })
+  .catch((error) => {
+    console.log(`${error.name}: ${error.message}`)
   });
+
 
 function populateTotal() {
   // reduce transaction amounts to a single total value
@@ -111,7 +115,7 @@ function sendTransaction(isAdding) {
 
   // add to beginning of current array of data
   transactions.unshift(transaction);
-  
+    
   // also send to server
   fetch("/api/transaction", {
     method: "POST",
@@ -126,11 +130,11 @@ function sendTransaction(isAdding) {
       throw new Error({ message: 'Something went wrong!' });
     }
 
-    // re-run logic to populate ui with new record
-    populateChart();
-    populateTable();
-    populateTotal();
-    
+      // re-run logic to populate ui with new record
+      populateChart();
+      populateTable();
+      populateTotal();
+
     return response.json();
   })
   .then(data => {
