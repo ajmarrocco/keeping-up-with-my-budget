@@ -111,11 +111,6 @@ function sendTransaction(isAdding) {
 
   // add to beginning of current array of data
   transactions.unshift(transaction);
-
-  // re-run logic to populate ui with new record
-  populateChart();
-  populateTable();
-  populateTotal();
   
   // also send to server
   fetch("/api/transaction", {
@@ -130,6 +125,11 @@ function sendTransaction(isAdding) {
     if (!response.ok) {
       throw new Error({ message: 'Something went wrong!' });
     }
+
+    // re-run logic to populate ui with new record
+    populateChart();
+    populateTable();
+    populateTotal();
     
     return response.json();
   })
