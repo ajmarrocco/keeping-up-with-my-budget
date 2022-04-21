@@ -30,7 +30,7 @@ request.onerror = function(event) {
 
 // This function will be executed if we attempt to submit a new transaction and there's no internet connection
 function saveRecord(record) {
-    //notification if user is offline
+    // notification if user is offline
     alert('You have added an expense or deposit but are offline.')
     // open a new transaction with the database with read and write permissions because there is no access to CRUD operations
     const transaction = db.transaction(['new_transaction'], 'readwrite');
@@ -77,8 +77,9 @@ function uploadTransaction() {
                 // clear all items in your store
                 transactionObjectStore.clear();
 
+                // alerts user that all transactions have been completed
                 alert('All saved transaction has been submitted!');
-
+                // Reloads page so transactions automatically appear
                 window.location.reload();
             })
             .catch(err => {
