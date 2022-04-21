@@ -78,6 +78,8 @@ function uploadTransaction() {
                 transactionObjectStore.clear();
 
                 alert('All saved transaction has been submitted!');
+
+                window.location.reload();
             })
             .catch(err => {
                 console.log(err);
