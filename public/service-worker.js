@@ -1,12 +1,12 @@
-const APP_PREFIX = 'Budget-';     
-const VERSION = 'version_01';
+// const APP_PREFIX = 'Budget-';     
+// const VERSION = 'version_01';
 const CACHE_NAME = 'my-site-cache-v1';
 const DATA_CACHE_NAME = 'data-cache-v1';
 //cache all files in public folder
 const FILES_TO_CACHE = [
     "/",
     "/index.html",
-    "/css/style.css",
+    "/css/styles.css",
     "/js/index.js",
     "/js/idb.js",
     "/icons/icon-72x72.png",
