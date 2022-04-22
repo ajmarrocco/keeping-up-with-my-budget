@@ -32,6 +32,17 @@ All dependencies must be installed prior to using application
 Pull requests are reviewed
 
 ### Images
+Homepage after adding some transactions
+![homepage](./readMeImages/homepage.png)
+
+Notification of added expense or deposit without internet connection
+![notification](./readMeImages/notification.jpg)
+
+Message that all saved transactions have been submitted
+![message](./readMeImages/message.jpg)
+
+Final homepage after updated transaction history and total
+![finalHomepage](./readMeImages/finalHomepage.jpg)
 
 ### Deployed URL
 https://keeping-up-with-my-budget.herokuapp.com/
